@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { counterActions} from '../store/index';
 
 const Counter = () => {
-  const counter = useSelector((state)=> {
-    //console.log('useSelector inside hi');//this will run twice
-    return state.counter.counter;
+  const counter = useSelector((state)=> {//this cb will run twice
+    //console.log('useSelector inside hi');
+    return state.counter.counter; //1st counter is the identifier for our counterslice from key, value pair map--reducer prop value
   });
   const show = useSelector((state)=> state.counter.showCounter);
   const dispatch = useDispatch();
